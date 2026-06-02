@@ -1,4 +1,4 @@
-Editing: Mandy Chan
+Editing: Mandy Chan Lily Fung
 
 # 香港使用手冊 | 一站式生活服務平台 (HK Manual)
 
