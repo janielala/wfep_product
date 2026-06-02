@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { CartProvider } from "@/context/CartContext";
 import { CookieProvider } from "@/context/CookieContext";
+import { SITE_CONTENT } from "@/lib/siteContent";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -20,11 +21,10 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "WFEP Wellness | Calmexa XR",
-    template: "%s | WFEP Wellness",
+    default: SITE_CONTENT.siteMetadata.title,
+    template: "%s | 香港使用手冊",
   },
-  description:
-    "Shop Calmexa XR — extended-release wellness support. Third-party tested, vegan capsules.",
+  description: SITE_CONTENT.siteMetadata.description,
 };
 
 export default function RootLayout({
@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="zh-HK">
       <body className={`${dmSans.variable} ${fraunces.variable} antialiased`}>
         <CookieProvider>
           <CartProvider>
