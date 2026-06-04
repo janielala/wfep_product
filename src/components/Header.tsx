@@ -27,7 +27,7 @@ export function Header() {
         <nav className="hidden items-center gap-1 md:flex">
           {nav.map((item) => (
             <Link
-              key={item.href}
+              key={item.label}
               href={item.url}
               className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                 pathname === item.url
