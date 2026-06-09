@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import heroBackground from "@/lib/Group 2 Presentation.png";
 import { SITE_CONTENT } from "@/lib/siteContent";
 
 const categoryIcons: Record<string, string> = {
@@ -14,13 +16,25 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero-marketplace text-white">
-        <div className="mx-auto max-w-6xl px-4 py-18 sm:px-6 lg:py-24">
-          <div className="max-w-3xl">
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold">
+      <section className="hero-marketplace relative overflow-hidden text-white">
+        <Image
+          src={heroBackground}
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/70 to-slate-900/35"
+          aria-hidden
+        />
+        <div className="relative z-10 mx-auto max-w-6xl px-4 py-18 sm:px-6 lg:py-24">
+          <div className="ml-auto max-w-3xl lg:mr-0">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-black/30 px-3 py-1 text-xs font-semibold backdrop-blur-md">
               香港新生活支援平台
             </p>
-            <h1 className="font-display mt-5 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+            <h1 className="font-display mt-5 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               {heroSection.title}
             </h1>
             <p className="mt-5 text-base leading-relaxed text-slate-100 sm:text-lg">
@@ -35,17 +49,17 @@ export default function HomePage() {
               </Link>
               <Link
                 href={heroSection.secondaryCTA.url}
-                className="inline-flex items-center rounded-full border border-white/40 bg-transparent px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex items-center rounded-full border border-white/40 bg-black/20 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
               >
                 {heroSection.secondaryCTA.label}
               </Link>
             </div>
-            <div className="mt-6 rounded-2xl border border-white/25 bg-white/10 p-3 backdrop-blur-sm">
+            <div className="mt-6 rounded-2xl border border-white/25 bg-black/30 p-3 backdrop-blur-md">
               <div className="flex flex-col gap-3 sm:flex-row">
                 <input
                   type="text"
                   placeholder="例如：銀行開戶、睇樓陪同、校園導覽"
-                  className="h-12 flex-1 rounded-xl border border-white/30 bg-white/90 px-4 text-sm text-slate-900 placeholder:text-slate-500 outline-none"
+                  className="h-12 flex-1 rounded-xl border border-white/30 bg-white/95 px-4 text-sm text-slate-900 placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-emerald-500"
                 />
                 <button
                   type="button"
@@ -57,7 +71,10 @@ export default function HomePage() {
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {heroSection.stats.map((stat) => (
-                <div key={stat.label} className="rounded-2xl border border-white/30 bg-white/10 p-4">
+                <div
+                  key={stat.label}
+                  className="rounded-2xl border border-white/20 bg-black/25 p-4 backdrop-blur-sm"
+                >
                   <p className="text-2xl font-bold">{stat.value}</p>
                   <p className="mt-1 text-sm text-slate-200">{stat.label}</p>
                 </div>
